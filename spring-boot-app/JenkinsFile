@@ -9,7 +9,7 @@ pipeline {
     stage('Checkout') {
       steps {
         sh 'echo passed'
-        //git branch: 'main', url: 'https://github.com/ShikhaaSharmaa45/mypipline.git'
+        //git branch: 'main', url: 'https://github.com/ShikhaaSharmaa45/dockerfile.git'
       }
     }
     stage('Build and Test') {
@@ -21,7 +21,7 @@ pipeline {
     }
     stage('Static Code Analysis') {
       environment {
-        SONAR_URL = "http://35.225.178.100:9000"
+        SONAR_URL = "http://35.232.143.36:9000"
       }
       steps {
         withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
